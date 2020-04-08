@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="INFO">
+    <Appenders>
+        <!--控制台日志-->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[baidu-document] %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+   </Appenders>
+
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
