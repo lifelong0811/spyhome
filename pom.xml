@@ -13,7 +13,7 @@
   <groupId>com.jason.spy</groupId>
   <artifactId>spy-home</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
   <name>spy-home</name>
   <url>http://maven.apache.org</url>
@@ -23,6 +23,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.skip.deploy>false</maven.skip.deploy>
+    <maven.deploy.version>3.0.0-M1</maven.deploy.version>
   </properties>
 
   <dependencies>
@@ -40,7 +42,27 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>${maven.deploy.version}</version>
+        <configuration>
+          <skip>${maven.skip.deploy}</skip>
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
+  <distributionManagement>
+    <repository>
+      <id>rdc-releases</id>
+      <url>https://repo.rdc.aliyun.com/repository/33086-release-P1Qh8n/</url>
+    </repository>
+    <snapshotRepository>
+      <id>rdc-snapshots</id>
+      <url>https://repo.rdc.aliyun.com/repository/33086-snapshot-TBe7tr/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
 
 </project>
