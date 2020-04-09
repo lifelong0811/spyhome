@@ -15,8 +15,7 @@ class StockIndexServiceImplTest {
     @Autowired
     private StockIndexService stockIndexService;
 
-    @Test
-    @Ignore
+//    @Test
     void getStockIndexById() {
         StockIndexResponse response = stockIndexService.getStockIndexById("SH000001");
         Assert.assertTrue("返回code错误", response.getErrorCode() == 0);

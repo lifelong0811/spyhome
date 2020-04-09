@@ -15,8 +15,7 @@ class ServerJiangMessagePushTest {
 
     @Autowired
     private ServerJiangMessagePush messagePush;
-    @Test
-    @Ignore
+//    @Test
     void pushMessage() {
         PushDTO pushDTO = new PushDTO();
         pushDTO.setTitle("hello" + System.currentTimeMillis());
