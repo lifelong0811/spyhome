@@ -20,7 +20,6 @@ import java.util.Map;
 @Service
 public class ServerJiangMessagePush implements MessagePushService {
     public static final String URL = "https://sc.ftqq.com/SCU92682Ta981f9ddf3ea3c46b9aa5f9e4a8e72dc5e89e2b568764.send?text=%s&desp=%s";
-//    public static final String URL = "https://sc.ftqq.com/SCU92682Ta981f9ddf3ea3c46b9aa5f9e4a8e72dc5e89e2b568764.send";
     public static final Logger LOGGER = LoggerFactory.getLogger(ServerJiangMessagePush.class);
     @Autowired
     private RestTemplate restTemplate;
@@ -29,11 +28,7 @@ public class ServerJiangMessagePush implements MessagePushService {
     public BaseResponse pushMessage(PushDTO pushDTO) {
         ServerJiangResponse serverJiangResponse = null;
         try {
-            Map<String, String> param = Maps.newHashMap();
-            param.put("text", pushDTO.getTitle());
-            param.put("desp", pushDTO.getDesp());
             serverJiangResponse = restTemplate.getForObject(String.format(URL, pushDTO.getTitle(), pushDTO.getDesp()), ServerJiangResponse.class);
-//            serverJiangResponse = restTemplate.getForObject(URL, ServerJiangResponse.class, param);
         } catch (Exception e) {
             LOGGER.error("ServerJiangMessagePush.pushMessage exception, pushDTO: {} ", pushDTO, e);
             return BaseResponse.buidFailure(BaseResponseEnum.SYSTEM_EXCEPTION, "ServerJiangMessagePush.pushMessage exception", e.getMessage());
