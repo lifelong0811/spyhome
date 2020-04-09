@@ -18,6 +18,9 @@ import org.springframework.web.client.RestTemplate;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+/**
+ * @author wangleijie
+ */
 @Configurable
 @ConditionalOnClass(value = {RestTemplate.class, HttpClient.class})
 public class RestTemplateConfiguration {

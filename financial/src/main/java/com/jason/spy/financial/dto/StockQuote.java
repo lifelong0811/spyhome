@@ -2,6 +2,8 @@ package com.jason.spy.financial.dto;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 @Data
 public class StockQuote {
     private String symbol;
@@ -11,12 +13,12 @@ public class StockQuote {
     private double avgPrice;
     private long delayed;
     private long type;
-    private double percent;
+    private BigDecimal percent;
     private double tickSize;
     private long floatShares;
     private double amplitude;
     private double current;
-    private double high;
+    private BigDecimal high;
     private double currentYearPercent;
     private double floatMarketCapital;
     private long issueDate;
