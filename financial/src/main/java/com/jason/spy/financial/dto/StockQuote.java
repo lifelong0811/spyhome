@@ -17,7 +17,7 @@ public class StockQuote {
     private double tickSize;
     private long floatShares;
     private double amplitude;
-    private double current;
+    private BigDecimal current;
     private BigDecimal high;
     private double currentYearPercent;
     private double floatMarketCapital;

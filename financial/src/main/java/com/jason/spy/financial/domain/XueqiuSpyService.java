@@ -56,7 +56,7 @@ public class XueqiuSpyService {
                 StockQuote quote = response.getData().getQuote();
                 StockMarket market = response.getData().getMarket();
                 tool.quote("当前状态: " + market.getStatus());
-                tool.quote("当前点数: " + quote.getHigh().toPlainString());
+                tool.quote("当前点数: " + quote.getCurrent().toPlainString());
                 tool.quote("涨跌幅度: " + quote.getPercent().toPlainString());
             }
         }
